@@ -10,7 +10,7 @@ module.exports = sequelize.define("blog", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    Tags: {
+    tags: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -19,6 +19,7 @@ module.exports = sequelize.define("blog", {
         allowNull: false
     }
 }, {
+    freezeTableName:true,
     createdAt: true,
     updatedAt: true,
     paranoid: true,

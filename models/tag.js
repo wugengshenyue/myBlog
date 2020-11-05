@@ -7,6 +7,7 @@ module.exports = sequelize.define("tag", {
         allowNull: false
     }
 }, {
+    freezeTableName:true,
     createdAt: true,
     updatedAt: true,
     paranoid: true,

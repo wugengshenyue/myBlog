@@ -12,9 +12,10 @@ module.exports = sequelize.define("comment", {
     },
     target: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }
 }, {
+    freezeTableName:true,
     createdAt: true,
     updatedAt: true,
     paranoid: true,

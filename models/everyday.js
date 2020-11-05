@@ -7,6 +7,7 @@ module.exports = sequelize.define("everyday", {
         allowNull: false
     },
 }, {
+    freezeTableName:true,
     createdAt: true,
     updatedAt: true,
     paranoid: true,
