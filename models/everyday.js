@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = sequelize.define("everyday", {
     content: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: false
     },
 }, {

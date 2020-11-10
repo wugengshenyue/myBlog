@@ -2,19 +2,19 @@
   <div class="nav">
     <div class="core">
       <div class="left">
-        <router-link to="/">郑晓个人博客 | 技术博客</router-link>
+        <router-link to="/">个人博客 | 技术博客</router-link>
         <ul>
           <li><router-link to="/">首页</router-link></li>
-          <li><router-link to="/">地图</router-link></li>
-          <li><router-link to="/">关于</router-link></li>
-          <li><router-link to="/">留言</router-link></li>
+          <li><router-link to="/sitemap">地图</router-link></li>
+          <li><router-link to="/about">关于</router-link></li>
+          <li><router-link to="/guestbook">留言</router-link></li>
         </ul>
       </div>
 
       <div class="right">
         <div class="search">
-          <input type="text" placeholder="输入关键词查找" />
-          <button>搜索</button>
+          <input v-model="keyword" type="text" placeholder="输入关键词查找" />
+          <button @click="search">搜索</button>
         </div>
       </div>
     </div>
@@ -22,7 +22,18 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      keyword: "",
+    };
+  },
+  methods: {
+    search() {
+      this.$router.push({ path: "/", query: { s: this.keyword } });
+    },
+  },
+};
 </script>
 
 
@@ -30,6 +41,8 @@ export default {};
 
 <style scoped>
 .nav {
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 50px;
   background-color: #191818;

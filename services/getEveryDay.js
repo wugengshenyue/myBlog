@@ -5,10 +5,10 @@ module.exports = async function () {
     if (data) {
         data = data.toJSON()
         return {
-            data: data.content,
+            content: data.content,
             time: new Date(data.createdAt).getTime(),
         }
     } else {
-        return data;
+        return {};
     }
 }

@@ -1,11 +1,12 @@
 const { Comment } = require("../models/index.js");
 
-module.exports = async function () {
-    let data = await Comment.findAll({ attributes: ["name", "content", "blogId", "createdAt"], order: [['createdAt', 'DESC']], offset: 0, limit: 6 });
+module.exports = async function (size) {
+    let data = await Comment.findAll({ attributes: ["id", "name", "content", "blogId", "createdAt"], order: [['createdAt', 'DESC']], offset: 0, limit: size });
     if (data) {
         data = JSON.parse(JSON.stringify(data))
         return data.map((ele) => {
             return {
+                id: ele.id,
                 name: ele.name,
                 content: ele.content,
                 blogId: ele.blogId,

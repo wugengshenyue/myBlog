@@ -6,11 +6,15 @@ module.exports = sequelize.define("blog", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    content: {
-        type: DataTypes.STRING,
+    contentHtml: {
+        type: DataTypes.TEXT,
         allowNull: false
     },
-    tags: {
+    contentText: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    tagAll: {
         type: DataTypes.STRING,
         allowNull: false
     },

@@ -2,15 +2,18 @@
   <div class="hotblog">
     <h3>最近热门</h3>
     <ul>
-      <li><a href="">啊啊啊啊啊</a></li>
-      <li><a href="">啊啊啊啊啊</a></li>
-      <li><a href="">啊啊啊啊啊</a></li>
-      <li><a href="">啊啊啊啊啊</a></li>
-      <li><a href="">啊啊啊啊啊</a></li>
-      <li><a href="">啊啊啊啊啊</a></li>
+      <li v-for="data in blogs" :key="data.id">
+        <router-link :to="'/blog/' + data.id">{{ data.title }}</router-link>
+      </li>
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["blogs"],
+};
+</script>
 
 
 <style scoped>
@@ -33,8 +36,6 @@
 }
 
 .hotblog {
-  margin-left: 500px;
-  margin-top: 500px;
   width: 360px;
   background-color: #1f1f1f;
   border-radius: 3px;

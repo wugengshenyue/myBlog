@@ -10,14 +10,40 @@ module.exports = async function (page, size, keyword) {
     }
 
     let data = await Blog.findAndCountAll({
-        attributes: ["title", "content", "tags", "pageviews"],
+        attributes: ["id", "title", "contentText", "tagAll", "pageviews", "createdAt"],
         order: [['createdAt', 'DESC']],
         offset: (page - 1) * size, limit: size,
         where
     });
 
     if (data) {
-        return JSON.parse(JSON.stringify(data));
+        data = JSON.parse(JSON.stringify(data));
+
+        data.rows = data.rows.filter((ele) => {
+
+            if (ele.id > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+
+        
+        data.count = data.count - 2;
+        data.rows = data.rows.map((ele) => {
+            // ele.target = ele.target === null ? "" : ele.target;
+            return {
+                id: ele.id,
+                title: ele.title,
+                content: ele.contentText,
+                tags: ele.tagAll,
+                pageviews: ele.pageviews,
+                time: new Date(ele.createdAt).getTime()
+            }
+        })
+
+
+        return data;
     } else {
         return data;
     }
