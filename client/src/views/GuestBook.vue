@@ -4,11 +4,12 @@
     <div class="core">
       <div class="left">
         <div class="content" v-html="content"></div>
-        <comment :comments="comments" :style="{ marginBottom: '10px' }" />
+        <comment :comments="comments" :style="{ marginBottom: '30px' }" />
         <post-comments :id="-2" />
       </div>
       <right-nav />
     </div>
+     <bottom />
   </div>
 </template>
 
@@ -23,7 +24,7 @@
 
 .guest-book > .core {
   width: 1140px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
 }
@@ -37,6 +38,7 @@
   margin-bottom: 50px;
   background-color: #f5f5f5;
   font-size: 14px;
+
 }
 </style>
 
@@ -46,12 +48,14 @@ import TopNav from "@/components/nav.vue";
 import RightNav from "@/components/rightNav.vue";
 import Comment from "@/components/comment.vue";
 import PostComments from "@/components/postComments.vue";
+import Bottom from "@/components/bottom.vue";
 export default {
   components: {
     TopNav,
     RightNav,
     Comment,
     PostComments,
+    Bottom
   },
   data() {
     return {

@@ -6,7 +6,7 @@ import About from '../views/About.vue'
 import GuestBook from '../views/GuestBook.vue'
 import SiteMap from '../views/SiteMap.vue'
 import AddBlog from '../views/AddBlog.vue'
-
+import error from '../views/Error.vue'
 
 
 Vue.use(VueRouter)
@@ -40,7 +40,11 @@ const routes = [
   {
     path: '/addblog',
     component: AddBlog
+  },{
+    path: '*',
+    component: error
   }
+
 
 ]
 

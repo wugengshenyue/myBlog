@@ -16,8 +16,8 @@
       <div class="separate"></div>
       <div class="text" v-html="content"></div>
     </div>
-    <comment :comments="comments" :style="{ marginBottom: '50px' }" />
-    <post-comments :id="id" :style="{ marginBottom: '20px' }" />
+    <comment :comments="comments" :style="{ marginBottom: '30px' }" />
+    <post-comments :id="id" />
   </div>
 </template>
 

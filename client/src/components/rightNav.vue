@@ -2,7 +2,7 @@
   <div class="right-nav">
     <random-tag :tags="tags" :style="{ marginBottom: '20px' }" />
     <hot-blog :blogs="blogs" :style="{ marginBottom: '20px' }" />
-    <new-comment :comments="comments" :style="{ marginBottom: '20px' }" />
+    <new-comment :comments="comments"  />
   </div>
 </template>
 

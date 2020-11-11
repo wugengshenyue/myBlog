@@ -7,6 +7,7 @@
       </div>
       <right-nav />
     </div>
+    <bottom />
   </div>
 </template>
 
@@ -18,12 +19,13 @@ import axios from "axios";
 import TopNav from "@/components/nav.vue";
 import RightNav from "@/components/rightNav.vue";
 import BlogContent from "@/components/blogContent.vue";
-
+import Bottom from "@/components/bottom.vue";
 export default {
   components: {
     TopNav,
     RightNav,
     BlogContent,
+    Bottom,
   },
   data() {
     return {
@@ -62,7 +64,7 @@ export default {
 
 .blog .core {
   width: 1140px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
 }

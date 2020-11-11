@@ -25,6 +25,7 @@
 
       <right-nav />
     </div>
+    <bottom />
   </div>
 </template>
 
@@ -35,6 +36,7 @@ import RightNav from "@/components/rightNav.vue";
 import EveryDay from "@/components/everyDay.vue";
 import Blog from "@/components/blog.vue";
 import TurnPage from "@/components/turnPage.vue";
+import Bottom from "@/components/bottom.vue";
 
 export default {
   name: "Home",
@@ -44,6 +46,7 @@ export default {
     EveryDay,
     Blog,
     TurnPage,
+    Bottom
   },
   data() {
     return {
@@ -139,7 +142,7 @@ export default {
 
 .home .core {
   width: 1140px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
 }

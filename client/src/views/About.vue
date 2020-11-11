@@ -4,11 +4,12 @@
     <div class="core">
       <div class="left">
         <div class="content" v-html="content"></div>
-        <comment :comments="comments" :style="{ marginBottom: '10px' }" />
+        <comment :comments="comments" :style="{ marginBottom: '30px' }" />
         <post-comments :id="-1" />
       </div>
       <right-nav />
     </div>
+    <bottom />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import TopNav from "@/components/nav.vue";
 import RightNav from "@/components/rightNav.vue";
 import Comment from "@/components/comment.vue";
 import PostComments from "@/components/postComments.vue";
+import Bottom from "@/components/bottom.vue";
 export default {
   data() {
     return {
@@ -31,6 +33,7 @@ export default {
     RightNav,
     Comment,
     PostComments,
+    Bottom
   },
   methods: {
     async setData() {
@@ -59,7 +62,7 @@ export default {
 
 .about > .core {
   width: 1140px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: flex;
   justify-content: space-between;
 }
